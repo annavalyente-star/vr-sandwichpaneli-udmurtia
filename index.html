@@ -7,35 +7,35 @@
     <style>
         :root { 
             --purple: #2d1b4d; 
-            --soft-purple: rgba(123, 104, 238, 0.1); /* Полупрозрачный сиреневый для подложки */
+            --soft-purple: rgba(123, 104, 238, 0.1); 
             --gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fcf6ba 85%, #aa771c 100%); 
         }
         body { margin: 0; font-family: 'Inter', sans-serif; color: var(--purple); background: #fff; overflow-x: hidden; line-height: 1.5; }
 
-        /* --- ШАПКА --- */
         .nav { position: fixed; top: 0; width: 100%; padding: 15px 8%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid #eee; box-sizing: border-box; }
         .gold-text { background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; text-transform: uppercase; }
 
-        /* --- ГЛАВНЫЙ ЭКРАН С СИРЕНЕВОЙ ПОДЛОЖКОЙ --- */
         .hero { padding: 180px 8% 80px; max-width: 1200px; margin: 0 auto; text-align: left; }
         
-        /* Та самая подложка под заголовком */
         .title-badge {
             display: inline-block;
             background: var(--soft-purple);
             padding: 40px 60px;
             border-radius: 40px;
-            border-left: 8px solid #7b68ee; /* Тонкая полоска для стиля */
+            border-left: 8px solid #7b68ee;
             margin-bottom: 30px;
         }
 
         h1 { font-size: clamp(30px, 5vw, 52px); margin: 0; line-height: 1.1; }
         .sub-hero { font-size: 18px; opacity: 0.8; margin: 20px 0 40px; max-width: 600px; }
 
-        /* --- ОСТАЛЬНОЕ --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: #fdfbff; padding: 40px; border-radius: 40px; border: 1px solid #eee; text-align: center; }
+        
+        /* Стили для карточек и фото */
+        .card { background: #fdfbff; padding: 30px; border-radius: 40px; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 25px; margin-bottom: 20px; }
         
         .calc-section { background: #f9f9f9; border-radius: 60px; padding: 80px 0; margin: 50px 0; }
         .calc-box { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 0 20px; }
@@ -67,14 +67,17 @@
     <div class="container">
         <div class="grid-3">
             <div class="card">
+                <img src="panel1.png" alt="ППС ПАНЕЛИ">
                 <h3>ППС ПАНЕЛИ</h3>
                 <span style="color:#d32f2f; font-weight:bold; font-size:20px; display:block; margin:15px 0;">от 2 336 ₽/м²</span>
             </div>
             <div class="card">
+                <img src="panel2.png" alt="МВ ПАНЕЛИ">
                 <h3>МВ ПАНЕЛИ</h3>
                 <span style="color:#d32f2f; font-weight:bold; font-size:20px; display:block; margin:15px 0;">от 2 036 ₽/м²</span>
             </div>
             <div class="card">
+                <img src="panel3.png" alt="PIR ПАНЕЛИ">
                 <h3>PIR ПАНЕЛИ</h3>
                 <span style="color:#d32f2f; font-weight:bold; font-size:20px; display:block; margin:15px 0;">от 2 651 ₽/м²</span>
             </div>
