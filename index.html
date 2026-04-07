@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Производство сэндвич панелей Ижевск — Восток Ресурс</title>
+    <style>
+        :root { 
+            --purple: #2d1b4d; 
+            --soft-purple: rgba(123, 104, 238, 0.1); /* Полупрозрачный сиреневый для подложки */
+            --gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fcf6ba 85%, #aa771c 100%); 
+        }
+        body { margin: 0; font-family: 'Inter', sans-serif; color: var(--purple); background: #fff; overflow-x: hidden; line-height: 1.5; }
+
+        /* --- ШАПКА --- */
+        .nav { position: fixed; top: 0; width: 100%; padding: 15px 8%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid #eee; box-sizing: border-box; }
+        .gold-text { background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; text-transform: uppercase; }
+
+        /* --- ГЛАВНЫЙ ЭКРАН С СИРЕНЕВОЙ ПОДЛОЖКОЙ --- */
+        .hero { padding: 180px 8% 80px; max-width: 1200px; margin: 0 auto; text-align: left; }
+        
+        /* Та самая подложка под заголовком */
+        .title-badge {
+            display: inline-block;
+            background: var(--soft-purple);
+            padding: 40px 60px;
+            border-radius: 40px;
+            border-left: 8px solid #7b68ee; /* Тонкая полоска для стиля */
+            margin-bottom: 30px;
+        }
+
+        h1 { font-size: clamp(30px, 5vw, 52px); margin: 0; line-height: 1.1; }
+        .sub-hero { font-size: 18px; opacity: 0.8; margin: 20px 0 40px; max-width: 600px; }
+
+        /* --- ОСТАЛЬНОЕ --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: #fdfbff; padding: 40px; border-radius: 40px; border: 1px solid #eee; text-align: center; }
+        
+        .calc-section { background: #f9f9f9; border-radius: 60px; padding: 80px 0; margin: 50px 0; }
+        .calc-box { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 0 20px; }
+        .input-group { background: #fff; padding: 35px; border-radius: 35px; border: 1px solid #eee; }
+        input, select { width: 100%; padding: 14px; margin: 8px 0 20px; border-radius: 12px; border: 1px solid #ddd; font-size: 16px; box-sizing: border-box; }
+        
+        .res-box { background: var(--purple); color: #fff; padding: 40px; border-radius: 40px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+        .btn-wa { display: inline-block; padding: 18px 40px; background: var(--gold); color: #000; text-decoration: none; border-radius: 100px; font-weight: 800; text-transform: uppercase; transition: 0.3s; }
+
+        footer { padding: 60px 8%; background: #111; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div style="font-weight:900; font-size:22px;">ВОСТОК <span class="gold-text">РЕСУРС</span></div>
+        <a href="tel:+79524853937" class="gold-text" style="text-decoration:none; font-size:18px;">+7 (952) 485 39 37</a>
+    </nav>
+
+    <header class="hero">
+        <div class="title-badge">
+            <div style="background: var(--purple); color: #fff; display: inline-block; padding: 6px 20px; border-radius: 50px; margin-bottom: 20px; font-weight: bold; font-size: 12px;">Прямые поставки от производителя</div>
+            <h1>Производство сэндвич-панелей — <br><span class="gold-text">Восток Ресурс</span></h1>
+        </div>
+        <p class="sub-hero">Профессиональные решения для промышленного строительства. <br>Точный расчет дилерской стоимости по вашим размерам.</p>
+        <a href="https://wa.me" class="btn-wa">Заказать расчет по прайсу</a>
+    </header>
+
+    <div class="container">
+        <div class="grid-3">
+            <div class="card">
+                <h3>ППС ПАНЕЛИ</h3>
+                <span style="color:#d32f2f; font-weight:bold; font-size:20px; display:block; margin:15px 0;">от 2 336 ₽/м²</span>
+            </div>
+            <div class="card">
+                <h3>МВ ПАНЕЛИ</h3>
+                <span style="color:#d32f2f; font-weight:bold; font-size:20px; display:block; margin:15px 0;">от 2 036 ₽/м²</span>
+            </div>
+            <div class="card">
+                <h3>PIR ПАНЕЛИ</h3>
+                <span style="color:#d32f2f; font-weight:bold; font-size:20px; display:block; margin:15px 0;">от 2 651 ₽/м²</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="calc-section">
+        <div class="calc-box">
+            <div class="input-group">
+                <h2 style="margin:0 0 20px;">УМНЫЙ <span class="gold-text">КАЛЬКУЛЯТОР</span></h2>
+                <label>Размеры объекта (Д х Ш х В), м:</label>
+                <div style="display:flex; gap:10px;">
+                    <input type="number" id="L" value="12" oninput="calc()">
+                    <input type="number" id="W" value="6" oninput="calc()">
+                    <input type="number" id="H" value="4" oninput="calc()">
+                </div>
+                <label>Наполнитель и Толщина:</label>
+                <select id="mat" onchange="calc()">
+                    <option value="pps">Пенополистирол</option>
+                    <option value="mw">Мин. вата (95 пл.)</option>
+                    <option value="pir">PIR (ПИР) 30 пл.</option>
+                </select>
+                <select id="thick" onchange="calc()">
+                    <option value="60">60 мм</option>
+                    <option value="100" selected>100 мм</option>
+                    <option value="150">150 мм</option>
+                    <option value="250">250 мм</option>
+                </select>
+            </div>
+            <div class="res-box">
+                <h3 style="margin:0; opacity: 0.8;">Стоимость (Дилер):</h3>
+                <div id="total" style="font-size:42px; font-weight:900; margin:15px 0;" class="gold-text">0 ₽</div>
+                <div id="areaInfo" style="font-size:15px; opacity:0.8;">Площадь стен: 0 м²</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="padding: 0;">
+            <div style="font-weight:900; font-size:22px; margin-bottom:20px;">ВОСТОК <span class="gold-text">РЕСУРС</span></div>
+            <p>Офис: г. Ижевск, ул. К. Маркса, д. 244 (БЦ «Замок»)</p>
+            <p>Производство: д. Хохряки, ул. Трактовая, д. 10Б</p>
+            <p>Тел: +7 (952) 485 39 37</p>
+        </div>
+    </footer>
+
+    <script>
+        const prices = {
+            pps: { 60: 2336, 100: 2508, 150: 2823, 250: 3503 },
+            mw:  { 60: 2036, 100: 2281, 150: 2533, 250: 3528 },
+            pir: { 60: 2651, 100: 3043, 150: 3508, 250: 4700 }
+        };
+
+        function calc() {
+            const l = parseFloat(document.getElementById('L').value) || 0;
+            const w = parseFloat(document.getElementById('W').value) || 0;
+            const h = parseFloat(document.getElementById('H').value) || 0;
+            const m = document.getElementById('mat').value;
+            const t = document.getElementById('thick').value;
+            const s = (l + w) * 2 * h;
+            const cost = s * prices[m][t];
+            document.getElementById('areaInfo').innerText = `Площадь стен: ${Math.round(s)} м²`;
+            document.getElementById('total').innerText = Math.round(cost).toLocaleString() + ' ₽';
+        }
+        calc();
+    </script>
+</body>
+</html>
